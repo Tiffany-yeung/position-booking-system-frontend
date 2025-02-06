@@ -3,8 +3,13 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 
+import { SaltProvider } from "@salt-ds/core";
+import "@salt-ds/theme/index.css";
+
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
+  <SaltProvider>
+    <StrictMode>
+      <App />
+    </StrictMode>
+  </SaltProvider>
 )
