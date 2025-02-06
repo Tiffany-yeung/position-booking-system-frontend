@@ -4,6 +4,7 @@ import GlobalHeader, { TAB_NAMES } from './GlobalHeader'
 
 function App() {
   const [activeTab, setActiveTab] = useState(TAB_NAMES.POSITION_SUMMARY);
+  const [data, setData] = useState();
 
   useEffect(() => {
     if (activeTab === TAB_NAMES.POSITION_SUMMARY) {
@@ -13,15 +14,15 @@ function App() {
 
   return (
     <>
-      <header className='m-20'>
+      <header className='mx-20 py-10'>
         <GlobalHeader activeTab={activeTab} setActiveTab={setActiveTab} />
-        {activeTab === TAB_NAMES.POSITION_SUMMARY &&
-          <div>Position summary</div>
-        }
-        {activeTab === TAB_NAMES.CREATE_EVENT &&
-          <div>Create event</div>
-        }
       </header>
+      {activeTab === TAB_NAMES.POSITION_SUMMARY &&
+        <div>Position summary</div>
+      }
+      {activeTab === TAB_NAMES.CREATE_EVENT &&
+        <div>Create event</div>
+      }
     </>
   )
 }

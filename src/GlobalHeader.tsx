@@ -1,7 +1,5 @@
 import { NavigationItem } from "@salt-ds/core";
-import { useState } from "react";
 import JpmLogo from "./assets/jpm-logo.svg";
-import { Icon, InfoIcon } from "@salt-ds/icons";
 
 export enum TAB_NAMES {
     POSITION_SUMMARY = "Position Summary",
@@ -13,26 +11,23 @@ interface IGlobalHeader {
     setActiveTab: React.Dispatch<React.SetStateAction<TAB_NAMES>>;
 }
 
-function GlobalHeader({activeTab, setActiveTab}: IGlobalHeader) {
+function GlobalHeader({ activeTab, setActiveTab }: IGlobalHeader) {
     const tabNames = [TAB_NAMES.POSITION_SUMMARY, TAB_NAMES.CREATE_EVENT];
-
     return (
         <nav>
             <div className="grid grid-cols-3 items-center">
-                <img src={JpmLogo} alt="JPM logo" style={{ height: 30 }} />
+                <img src={JpmLogo} alt="JPM logo" style={{ height: 30 }} data-testid="jpm-logo" />
                 <div className="flex flex-row justify-center">
                     {tabNames.map((tabName) => (
-                        <li key={tabName}>
+                        <div key={tabName}>
                             <NavigationItem
                                 active={activeTab === tabName}
                                 href="#"
-                                onClick={() => {
-                                    setActiveTab(tabName);
-                                }}
+                                onClick={() => setActiveTab(tabName)}
                             >
                                 {tabName}
                             </NavigationItem>
-                        </li>
+                        </div>
                     ))}
                 </div>
             </div>
