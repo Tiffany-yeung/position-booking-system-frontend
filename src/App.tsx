@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import GlobalHeader, { TAB_NAMES } from './GlobalHeader'
 import { localBackendUrl } from './config';
-import PositionSummary from './tabs/PositionSummary';
+import PositionSummary from './tabs/positionSummary/PositionSummary';
 import { Position } from './types/backendTypes';
 
 function App() {
@@ -23,11 +23,13 @@ function App() {
 
   return (
     <>
-      <header className='mx-20 py-10'>
+      <header className='mx-20 pt-10 pb-8'>
         <GlobalHeader activeTab={activeTab} setActiveTab={setActiveTab} />
       </header>
       {activeTab === TAB_NAMES.POSITION_SUMMARY &&
-        <PositionSummary positions={positions} />
+        <>
+          <PositionSummary positions={positions} />
+        </>
       }
       {activeTab === TAB_NAMES.CREATE_EVENT &&
         <div>Create event</div>
