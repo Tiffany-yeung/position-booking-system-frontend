@@ -14,24 +14,21 @@ interface IGlobalHeader {
 function GlobalHeader({ activeTab, setActiveTab }: IGlobalHeader) {
     const tabNames = [TAB_NAMES.POSITION_SUMMARY, TAB_NAMES.CREATE_EVENT];
     return (
-        <nav>
-            <div className="grid grid-cols-3 items-center">
-                <img src={JpmLogo} alt="JPM logo" style={{ height: 30 }} data-testid="jpm-logo" />
-                <div className="flex flex-row justify-center">
-                    {tabNames.map((tabName) => (
-                        <div key={tabName}>
-                            <NavigationItem
-                                active={activeTab === tabName}
-                                href="#"
-                                onClick={() => setActiveTab(tabName)}
-                            >
-                                {tabName}
-                            </NavigationItem>
-                        </div>
-                    ))}
-                </div>
+        <div className="grid grid-cols-3 items-center">
+            <img src={JpmLogo} alt="JPM logo" style={{ height: 30 }} data-testid="jpm-logo" />
+            <div className="flex flex-row justify-center">
+                {tabNames.map((tabName) => (
+                    <div key={tabName}>
+                        <NavigationItem
+                            active={activeTab === tabName}
+                            onClick={() => setActiveTab(tabName)}
+                        >
+                            {tabName}
+                        </NavigationItem>
+                    </div>
+                ))}
             </div>
-        </nav>
+        </div>
     );
 }
 

@@ -5,8 +5,9 @@ export enum ACTION {
 }
 
 export type TradeEvent = {
+    uniqueId: number;
     id: number;
-    action: ACTION;
+    action: string;
     account: string;
     securityId: string;
     quantity: number;
