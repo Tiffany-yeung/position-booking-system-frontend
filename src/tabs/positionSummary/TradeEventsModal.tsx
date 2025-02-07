@@ -1,7 +1,6 @@
 import {
-    Button,
     Dialog,
-    DialogActions,
+    DialogCloseButton,
     DialogContent,
     DialogHeader,
     StackLayout,
@@ -34,32 +33,28 @@ function TradeEventsModal({ isModalVisible, setIsModalVisible, position }: ITrad
                         </div>
                     </div>
                     <table>
-                        <tr>
-                            {tableHeaders.map((header) => (
-                                <th>{header}</th>
-                            ))}
-                        </tr>
-                        {position?.tradeEvents.map((tradeEvent) => (
+                        <thead>
                             <tr>
-                                <td>{tradeEvent.id}</td>
-                                <td>{tradeEvent.action}</td>
-                                <td>{tradeEvent.account}</td>
-                                <td>{tradeEvent.securityId}</td>
-                                <td>{tradeEvent.quantity}</td>
+                                {tableHeaders.map((header) => (
+                                    <th>{header}</th>
+                                ))}
                             </tr>
-                        ))}
+                        </thead>
+                        <tbody>
+                            {position?.tradeEvents.map((tradeEvent) => (
+                                <tr>
+                                    <td>{tradeEvent.id}</td>
+                                    <td>{tradeEvent.action}</td>
+                                    <td>{tradeEvent.account}</td>
+                                    <td>{tradeEvent.securityId}</td>
+                                    <td>{tradeEvent.quantity}</td>
+                                </tr>
+                            ))}
+                        </tbody>
                     </table>
                 </StackLayout>
             </DialogContent>
-            <DialogActions>
-                <Button
-                    sentiment="accented"
-                    appearance="bordered"
-                    onClick={() => setIsModalVisible(false)}
-                >
-                    Close
-                </Button>
-            </DialogActions>
+            <DialogCloseButton onClick={() => setIsModalVisible(false)} />
         </Dialog>
     )
 }

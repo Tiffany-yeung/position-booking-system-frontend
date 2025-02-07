@@ -1,10 +1,10 @@
 
+import { useState } from "react";
 import { Position } from "../../types/backendTypes";
+import TradeEventsModal from "./TradeEventsModal";
+import "./positionSummary.css"
 import { AllCommunityModule, ColDef, ModuleRegistry, themeAlpine } from 'ag-grid-community';
 import { AgGridReact } from "ag-grid-react";
-import "./positionSummary.css"
-import { useState } from "react";
-import TradeEventsModal from "./TradeEventsModal";
 
 ModuleRegistry.registerModules([AllCommunityModule]);
 
@@ -41,7 +41,7 @@ function PositionSummary({ positions }: IPositionSummary) {
     };
 
     return (
-        <div className="mx-20">
+        <div className="mx-20 grid justify-items-center">
             <div style={{ width: '100%', height: 'calc(100vh - 185px)' }}>
                 <AgGridReact
                     columnDefs={columnDefs}
@@ -49,6 +49,7 @@ function PositionSummary({ positions }: IPositionSummary) {
                     defaultColDef={defaultColDef}
                     gridOptions={{ theme: themeAlpine }}
                     onRowDoubleClicked={(e) => openModal(e.data)}
+                    loading={false}
                 />
             </div>
             <TradeEventsModal

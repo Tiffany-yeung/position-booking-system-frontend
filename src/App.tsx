@@ -4,6 +4,7 @@ import GlobalHeader, { TAB_NAMES } from './GlobalHeader'
 import { localBackendUrl } from './config';
 import PositionSummary from './tabs/positionSummary/PositionSummary';
 import { Position } from './types/backendTypes';
+import CreateEvent from './tabs/createEvent/CreateEvent';
 
 function App() {
   const [activeTab, setActiveTab] = useState(TAB_NAMES.POSITION_SUMMARY);
@@ -27,12 +28,10 @@ function App() {
         <GlobalHeader activeTab={activeTab} setActiveTab={setActiveTab} />
       </header>
       {activeTab === TAB_NAMES.POSITION_SUMMARY &&
-        <>
-          <PositionSummary positions={positions} />
-        </>
+        <PositionSummary positions={positions} />
       }
       {activeTab === TAB_NAMES.CREATE_EVENT &&
-        <div>Create event</div>
+        <CreateEvent/>
       }
     </>
   )
