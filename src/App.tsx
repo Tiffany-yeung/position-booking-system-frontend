@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import './App.css'
 import GlobalHeader, { TAB_NAMES } from './GlobalHeader'
 import { localBackendUrl } from './config';
 import PositionSummary from './tabs/positionSummary/PositionSummary';

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Position } from "../../types/backendTypes";
 import TradeEventsModal from "./TradeEventsModal";
