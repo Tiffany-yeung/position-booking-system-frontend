@@ -1,6 +1,6 @@
 import { Button, MultilineInput } from "@salt-ds/core";
-import { TradeEvent } from "../../types/backendTypes";
-import { localBackendUrl } from "../../config";
+import { TradeEvent } from "../types/backendTypes";
+import { localBackendUrl } from "../config";
 
 interface ISubmitPayload {
     tradeEventsPayload: TradeEvent[];

@@ -5,7 +5,7 @@ import {
     DialogHeader,
     StackLayout,
 } from "@salt-ds/core";
-import { Position } from "../../types/backendTypes";
+import { Position } from "../types/backendTypes";
 
 interface ITradeEventsModal {
     isModalVisible: boolean;

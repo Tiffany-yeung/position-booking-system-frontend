@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Position } from "../../types/backendTypes";
-import TradeEventsModal from "./TradeEventsModal";
+import { Position } from "../types/backendTypes";
+import TradeEventsModal from "../components/TradeEventsModal";
 import "./positionSummary.css"
 import { AllCommunityModule, ColDef, ModuleRegistry, themeAlpine } from 'ag-grid-community';
 import { AgGridReact } from "ag-grid-react";

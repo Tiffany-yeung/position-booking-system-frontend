@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import GlobalHeader, { TAB_NAMES } from './GlobalHeader'
 import { localBackendUrl } from './config';
-import PositionSummary from './tabs/positionSummary/PositionSummary';
+import PositionSummary from './tabs/PositionSummary';
 import { Position } from './types/backendTypes';
 import CreateEvent from './tabs/createEvent/CreateEvent';
 

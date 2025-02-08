@@ -1,6 +1,6 @@
 import { Button, Input, RadioButton, RadioButtonGroup } from "@salt-ds/core";
 import { FormEvent, useReducer } from "react";
-import { TradeEvent } from "../../types/backendTypes";
+import { TradeEvent } from "../types/backendTypes";
 
 type Action = {
     type: string;
