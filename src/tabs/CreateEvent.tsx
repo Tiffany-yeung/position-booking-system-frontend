@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { TradeEvent } from "../../types/backendTypes";
-import SubmitPayload from "./SubmitPayload";
-import TradeEventForm from "./TradeEventForm";
+import { TradeEvent } from "../types/backendTypes";
+import SubmitPayload from "../components/SubmitPayload";
+import TradeEventForm from "../components/TradeEventForm";
 
 function CreateEvent() {
     const [tradeEventsPayload, setTradeEventsPayload] = useState<TradeEvent[]>([]);

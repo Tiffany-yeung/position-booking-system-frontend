@@ -3,7 +3,7 @@ import GlobalHeader, { TAB_NAMES } from './GlobalHeader'
 import { localBackendUrl } from './config';
 import PositionSummary from './tabs/PositionSummary';
 import { Position } from './types/backendTypes';
-import CreateEvent from './tabs/createEvent/CreateEvent';
+import CreateEvent from './tabs/CreateEvent';
 
 function App() {
   const [activeTab, setActiveTab] = useState(TAB_NAMES.POSITION_SUMMARY);
