@@ -14,7 +14,7 @@ interface ITradeEventForm {
 
 const initialTradeEventState: TradeEvent = {
     id: 0,
-    action: "",
+    action: "BUY",
     account: "",
     securityId: "",
     quantity: 0,

@@ -23,15 +23,17 @@ function App() {
 
   return (
     <>
-      <header className='mx-20 pt-10 pb-8'>
+      <header className='mx-20 mt-10 pb-8'>
         <GlobalHeader activeTab={activeTab} setActiveTab={setActiveTab} />
       </header>
-      {activeTab === TAB_NAMES.POSITION_SUMMARY &&
-        <PositionSummary positions={positions} />
-      }
-      {activeTab === TAB_NAMES.CREATE_EVENT &&
-        <CreateEvent/>
-      }
+      <div className='mx-20 mb-10'>
+        {activeTab === TAB_NAMES.POSITION_SUMMARY &&
+          <PositionSummary positions={positions} />
+        }
+        {activeTab === TAB_NAMES.CREATE_EVENT &&
+          <CreateEvent/>
+        }
+      </div>
     </>
   )
 }

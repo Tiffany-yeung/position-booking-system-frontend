@@ -31,7 +31,7 @@ function SubmitPayload({ tradeEventsPayload, setTradeEventsPayload }: ISubmitPay
             <MultilineInput
                 bordered
                 variant="secondary"
-                value={JSON.stringify(tradeEventsPayload, null, 2)}
+                value={JSON.stringify(tradeEventsPayload, null, 6)}
                 style={{ maxHeight: 350 }}
             />
             <div className="flex justify-end space-x-3">

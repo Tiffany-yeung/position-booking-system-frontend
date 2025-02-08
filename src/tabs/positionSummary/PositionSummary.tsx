@@ -21,7 +21,7 @@ const columnDefs: ColDef<Position>[] = [
         field: "securityId"
     },
     {
-        headerName: "Quantity",
+        headerName: "Total Quantity",
         field: "quantity"
     },
 ];
@@ -40,7 +40,7 @@ function PositionSummary({ positions }: IPositionSummary) {
     };
 
     return (
-        <div className="mx-20 grid justify-items-center">
+        <div className="grid justify-items-center">
             <div style={{ width: '100%', height: 'calc(100vh - 185px)' }}>
                 <AgGridReact
                     columnDefs={columnDefs}
