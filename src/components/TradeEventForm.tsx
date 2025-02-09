@@ -53,7 +53,7 @@ function TradeEventForm({ setTradeEventsPayload }: ITradeEventForm) {
     };
 
     return (
-        <>
+        <div data-testid="trade-event-form">
             <b>Create Event:</b>
             <form
                 id="trade-event-form"
@@ -64,8 +64,9 @@ function TradeEventForm({ setTradeEventsPayload }: ITradeEventForm) {
                 <Input
                     variant="secondary"
                     value={tradeEvent.id}
-                    inputProps={{ type: "number", required: true, min: 1, name: "id" }}
+                    inputProps={{ type: "number", required: true, min: 1, name: "id", alt: "ID input" }}
                     onChange={(e) => handleTextChange(e)}
+                    data-testid="id-input"
                 />
 
                 <label>Action</label>
@@ -75,39 +76,43 @@ function TradeEventForm({ setTradeEventsPayload }: ITradeEventForm) {
                     name="action"
                     onChange={(e) => handleTextChange(e)}
                 >
-                    <RadioButton label="BUY" value="BUY" />
-                    <RadioButton label="SELL" value="SELL" />
-                    <RadioButton label="CANCEL" value="CANCEL" />
+                    <RadioButton label="BUY" value="BUY" data-testid="action-buy"/>
+                    <RadioButton label="SELL" value="SELL" data-testid="action-sell"/>
+                    <RadioButton label="CANCEL" value="CANCEL" data-testid="action-cancel"/>
                 </RadioButtonGroup>
 
                 <label>Account</label>
                 <Input
                     variant="secondary"
                     value={tradeEvent.account}
-                    inputProps={{ type: "text", required: true, name: "account" }}
+                    inputProps={{ type: "text", required: true, name: "account", alt: "Account input" }}
                     onChange={(e) => handleTextChange(e)}
+                    data-testid="account-input"
                 />
 
                 <label>Security</label>
                 <Input
                     variant="secondary"
                     value={tradeEvent.securityId}
-                    inputProps={{ type: "text", required: true, name: "securityId" }}
+                    inputProps={{ type: "text", required: true, name: "securityId", alt: "Security input" }}
                     onChange={(e) => handleTextChange(e)}
+                    data-testid="security-input"
                 />
 
                 <label>Quantity</label>
                 <Input
                     variant="secondary"
                     value={tradeEvent.quantity}
-                    inputProps={{ type: "number", required: true, min: 1, name: "quantity" }}
+                    inputProps={{ type: "number", required: true, min: 1, name: "quantity", alt: "Quantity input" }}
                     onChange={(e) => handleTextChange(e)}
+                    data-testid="quantity-input"
                 />
 
                 <div className="flex justify-end space-x-3">
                     <Button
                         appearance="solid"
                         onClick={() => setTradeEvent({ type: "RESET", field: "", value: "" })}
+                        data-testid="clear-button"
                     >
                         Clear
                     </Button>
@@ -115,12 +120,13 @@ function TradeEventForm({ setTradeEventsPayload }: ITradeEventForm) {
                         sentiment="accented"
                         appearance="solid"
                         type="submit"
+                        data-testid="add-button"
                     >
                         Add
                     </Button>
                 </div>
             </form>
-        </>
+        </div>
     )
 }
 

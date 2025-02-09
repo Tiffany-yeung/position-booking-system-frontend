@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 import { expect, it, vitest } from 'vitest';
 import { localBackendUrl } from './config';
@@ -18,7 +18,7 @@ it('should render correct page when switching tabs', () => {
   expect(screen.queryByTestId("create-event")).toBeFalsy();
 });
 
-it('should fetch getAllPositions on load', async () => {
+it('should fetch getAllPositions on load', () => {
   vitest.spyOn(global, 'fetch');
   render(<App />);
   expect(fetch).toHaveBeenCalledWith(`${localBackendUrl}/getAllPositions`);
