@@ -1,0 +1,23 @@
+{
+    "account": "ACC1",
+    "securityId": "SEC1",
+    "quantity": 80,
+    "tradeEvents": [
+        {
+            "uniqueId": 1,
+            "id": 1,
+            "action": "BUY",
+            "account": "ACC1",
+            "securityId": "SEC1",
+            "quantity": 100
+        },
+        {
+            "uniqueId": 2,
+            "id": 2,
+            "action": "SELL",
+            "account": "ACC1",
+            "securityId": "SEC1",
+            "quantity": 20
+        }
+    ]
+}

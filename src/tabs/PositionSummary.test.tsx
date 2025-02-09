@@ -1,5 +1,5 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
-import { describe, expect, it, vitest } from "vitest";
+import { describe, expect, it } from "vitest";
 import PositionSummary from "./PositionSummary";
 import getAllPositionsMockResponse from "../mocks/getAllPositionsMockResponse.json";
 

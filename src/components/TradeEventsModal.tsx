@@ -13,8 +13,9 @@ interface ITradeEventsModal {
     position?: Position;
 }
 
+export const tableHeaders = ['ID', 'Action', 'Account', 'Security', 'Quantity'];
+
 function TradeEventsModal({ isModalVisible, setIsModalVisible, position }: ITradeEventsModal) {
-    const tableHeaders = ['ID', 'Action', 'Account', 'Security', 'Quantity'];
 
     return (
         <Dialog open={isModalVisible} onOpenChange={setIsModalVisible} data-testid="trade-events-modal">
@@ -22,13 +23,13 @@ function TradeEventsModal({ isModalVisible, setIsModalVisible, position }: ITrad
             <DialogContent style={{ maxHeight: 250 }}>
                 <StackLayout>
                     <div className="flex flex-row space-x-5">
-                        <div>
+                        <div data-testid="account-field">
                             <b>Account:</b> {position?.account}
                         </div>
-                        <div>
+                        <div data-testid="security-field">
                             <b>Security:</b> {position?.securityId}
                         </div>
-                        <div>
+                        <div data-testid="quantity-field">
                             <b>Total Quantity:</b> {position?.quantity}
                         </div>
                     </div>
