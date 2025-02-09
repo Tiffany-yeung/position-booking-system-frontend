@@ -40,7 +40,7 @@ function PositionSummary({ positions }: IPositionSummary) {
     };
 
     return (
-        <div className="grid justify-items-center">
+        <div className="grid justify-items-center" data-testid="position-summary">
             <div style={{ width: '100%', height: 'calc(100vh - 185px)' }}>
                 <AgGridReact
                     columnDefs={columnDefs}

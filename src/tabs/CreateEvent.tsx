@@ -8,7 +8,7 @@ function CreateEvent() {
 
     return (
         <>
-            <div className="mx-20 grid justify-center">
+            <div className="mx-20 grid justify-center" data-testid="create-event">
                 <div className="space-y-3" style={{ width: 500 }}>
                     <TradeEventForm
                         setTradeEventsPayload={setTradeEventsPayload}
