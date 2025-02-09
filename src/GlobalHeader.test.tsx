@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { expect, it, test, vitest } from 'vitest';
+import { expect, it, vitest } from 'vitest';
 import GlobalHeader, { TAB_NAMES } from './GlobalHeader';
 
 const setActiveTab = vitest.fn();

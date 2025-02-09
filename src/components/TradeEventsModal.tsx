@@ -17,7 +17,7 @@ function TradeEventsModal({ isModalVisible, setIsModalVisible, position }: ITrad
     const tableHeaders = ['ID', 'Action', 'Account', 'Security', 'Quantity'];
 
     return (
-        <Dialog open={isModalVisible} onOpenChange={setIsModalVisible}>
+        <Dialog open={isModalVisible} onOpenChange={setIsModalVisible} data-testid="trade-events-modal">
             <DialogHeader header="Trade Events" />
             <DialogContent style={{ maxHeight: 250 }}>
                 <StackLayout>
