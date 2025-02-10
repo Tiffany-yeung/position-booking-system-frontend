@@ -14,7 +14,7 @@ interface IGlobalHeader {
 function GlobalHeader({ activeTab, setActiveTab }: IGlobalHeader) {
     const tabNames = [TAB_NAMES.POSITION_SUMMARY, TAB_NAMES.CREATE_EVENT];
     return (
-        <div className="grid grid-cols-3 items-center space-x-12" data-testid="global-header-id">
+        <div className="grid grid-cols-3 items-center" data-testid="global-header-id">
             <img src={JpmLogo} alt="JPM logo" style={{ height: 30 }} data-testid="jpm-logo-id" />
             <div className="flex flex-row justify-center">
                 {tabNames.map((tabName) => (
