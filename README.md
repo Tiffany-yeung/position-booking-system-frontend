@@ -3,6 +3,7 @@
 ## To run
 - `npm install` to install all dependencies
 - `npm run dev` to start UI application
+- `npm run test` to run all tests
 - default local URL is http://localhost:8080
 
 ## Figma mock up
