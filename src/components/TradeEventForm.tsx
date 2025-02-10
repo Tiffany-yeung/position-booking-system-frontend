@@ -57,7 +57,7 @@ function TradeEventForm({ setTradeEventsPayload }: ITradeEventForm) {
             <b>Create Event:</b>
             <form
                 id="trade-event-form"
-                className="flex flex-col space-y-3  pb-10"
+                className="flex flex-col space-y-3 pb-10"
                 onSubmit={(e) => addTradeEventToPayload(e)}
             >
                 <label>ID</label>
@@ -76,9 +76,9 @@ function TradeEventForm({ setTradeEventsPayload }: ITradeEventForm) {
                     name="action"
                     onChange={(e) => handleTextChange(e)}
                 >
-                    <RadioButton label="BUY" value="BUY" data-testid="action-buy"/>
-                    <RadioButton label="SELL" value="SELL" data-testid="action-sell"/>
-                    <RadioButton label="CANCEL" value="CANCEL" data-testid="action-cancel"/>
+                    <RadioButton label="BUY" value="BUY" data-testid="action-buy" />
+                    <RadioButton label="SELL" value="SELL" data-testid="action-sell" />
+                    <RadioButton label="CANCEL" value="CANCEL" data-testid="action-cancel" />
                 </RadioButtonGroup>
 
                 <label>Account</label>

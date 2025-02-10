@@ -26,7 +26,7 @@ function SubmitPayload({ tradeEventsPayload, setTradeEventsPayload }: ISubmitPay
     };
 
     return (
-        <div data-testid="submit-payload">
+        <div data-testid="submit-payload" className="space-y-3">
             <b>Payload:</b>
             <MultilineInput
                 bordered
