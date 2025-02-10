@@ -26,9 +26,6 @@ it('should render TradeEventForm', () => {
     expect(screen.getByText("Quantity")).toBeInTheDocument();
     expect(screen.getByTestId("quantity-input")).toBeTruthy();
 
-
-    expect(screen.getByTestId("quantity-input")).toBeTruthy();
-
     expect(screen.getByTestId("clear-form-button")).toBeTruthy();
     expect(screen.getByTestId("add-button")).toBeTruthy();
 });
@@ -39,7 +36,6 @@ describe('Input validation', () => {
         { altText: "ID input" },
         { altText: "Quantity input" },
     ];
-
 
     it.each(numberInputCases)("should validate number input %s", ({ altText }) => {
         render(<TradeEventForm setTradeEventsPayload={setTradeEventsPayload} />);
@@ -56,7 +52,6 @@ describe('Input validation', () => {
         fireEvent.change(numberInput, { target: { value: 50 } });
         expect(numberInput).toBeValid();
     });
-
 
     const textInputCases = [
         { altText: "Account input", inputValue: "ACC1" },
@@ -105,6 +100,7 @@ describe('Buttons', () => {
         fireEvent.click(screen.getByTestId("add-button"));
         expect(setTradeEventsPayload).not.toBeCalled();
     });
+    
     it('should call setTradeEventsPayload for valid inputs', () => {
         render(<TradeEventForm setTradeEventsPayload={setTradeEventsPayload} />);
         const idInput: HTMLInputElement = screen.getByAltText("ID input");
