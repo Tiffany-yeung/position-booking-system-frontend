@@ -112,7 +112,7 @@ function TradeEventForm({ setTradeEventsPayload }: ITradeEventForm) {
                     <Button
                         appearance="solid"
                         onClick={() => setTradeEvent({ type: "RESET", field: "", value: "" })}
-                        data-testid="clear-button"
+                        data-testid="clear-form-button"
                     >
                         Clear
                     </Button>

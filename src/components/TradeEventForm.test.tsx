@@ -29,7 +29,7 @@ it('should render TradeEventForm', () => {
 
     expect(screen.getByTestId("quantity-input")).toBeTruthy();
 
-    expect(screen.getByTestId("clear-button")).toBeTruthy();
+    expect(screen.getByTestId("clear-form-button")).toBeTruthy();
     expect(screen.getByTestId("add-button")).toBeTruthy();
 });
 
@@ -47,13 +47,13 @@ describe('Input validation', () => {
 
         expect(numberInput).toBeInvalid(); //default is 0
 
-        fireEvent.change(numberInput, { target: { value: "" } });
+        fireEvent.change(numberInput, { target: { value: null } });
         expect(numberInput).toBeInvalid();
 
-        fireEvent.change(numberInput, { target: { value: "-50" } });
+        fireEvent.change(numberInput, { target: { value: -50 } });
         expect(numberInput).toBeInvalid();
 
-        fireEvent.change(numberInput, { target: { value: "50" } });
+        fireEvent.change(numberInput, { target: { value: 50 } });
         expect(numberInput).toBeValid();
     });
 
@@ -82,17 +82,17 @@ describe('Buttons', () => {
         const securityInput: HTMLInputElement = screen.getByAltText("Security input");
         const quantityInput: HTMLInputElement = screen.getByAltText("Quantity input");
 
-        fireEvent.change(idInput, { target: { value: "1" } });
+        fireEvent.change(idInput, { target: { value: 1 } });
         fireEvent.change(accountInput, { target: { value: "ACC1" } });
         fireEvent.change(securityInput, { target: { value: "SEC1" } });
-        fireEvent.change(quantityInput, { target: { value: "50" } });
+        fireEvent.change(quantityInput, { target: { value: 50 } });
 
         expect(idInput.value).toBe("1");
         expect(accountInput.value).toBe("ACC1");
         expect(securityInput.value).toBe("SEC1");
         expect(quantityInput.value).toBe("50");
 
-        fireEvent.click(screen.getByTestId("clear-button"));
+        fireEvent.click(screen.getByTestId("clear-form-button"));
 
         expect(idInput.value).toBe("0");
         expect(accountInput.value).toBe("");
@@ -112,10 +112,10 @@ describe('Buttons', () => {
         const securityInput: HTMLInputElement = screen.getByAltText("Security input");
         const quantityInput: HTMLInputElement = screen.getByAltText("Quantity input");
 
-        fireEvent.change(idInput, { target: { value: "1" } });
+        fireEvent.change(idInput, { target: { value: 1 } });
         fireEvent.change(accountInput, { target: { value: "ACC1" } });
         fireEvent.change(securityInput, { target: { value: "SEC1" } });
-        fireEvent.change(quantityInput, { target: { value: "50" } });
+        fireEvent.change(quantityInput, { target: { value: 50 } });
 
         fireEvent.click(screen.getByTestId("add-button"));
         expect(setTradeEventsPayload).toBeCalled();

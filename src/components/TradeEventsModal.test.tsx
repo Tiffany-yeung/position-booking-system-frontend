@@ -17,10 +17,10 @@ it('should render modal', () => {
     expect(screen.getByText("Trade Events")).toBeTruthy();
     expect(screen.getByTestId("account-field").innerHTML).toBe("<b>Account:</b> ACC1");
     expect(screen.getByTestId("security-field").innerHTML).toBe("<b>Security:</b> SEC1");
-    expect(screen.getByTestId("quantity-field").innerHTML).toBe("<b>Quantity:</b> 80");
+    expect(screen.getByTestId("quantity-field").innerHTML).toBe("<b>Total Quantity:</b> 80");
 
     const table = screen.getByRole('table');
-    
+
     const columnHeaders = table.querySelectorAll("thead tr th");
     expect(columnHeaders.length).toBe(5);
     for (let i = 0; i < columnHeaders.length; i++) {

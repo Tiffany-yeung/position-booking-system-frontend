@@ -38,6 +38,7 @@ function SubmitPayload({ tradeEventsPayload, setTradeEventsPayload }: ISubmitPay
                 <Button
                     appearance="solid"
                     onClick={() => setTradeEventsPayload([])}
+                    data-testid="clear-payload-button"
                 >
                     Clear
                 </Button>
